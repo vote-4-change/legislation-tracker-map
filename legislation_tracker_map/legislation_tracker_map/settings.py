@@ -53,6 +53,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+
 AXES_FAILURE_LIMIT = 5
 AXES_COOLOFF_TIME = 1  # in hours
 AXES_LOCKOUT_TEMPLATE = 'axes/lockout.html'
@@ -69,7 +72,7 @@ ROOT_URLCONF = 'legislation_tracker_map.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
