@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Uploads</title>
+</head>
+<body>
+<h2>Upload File</h2>
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="upload">
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Uploaded Files</h2>
+<ul>
+    {% for file in files %}
+    <li>{{ file }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

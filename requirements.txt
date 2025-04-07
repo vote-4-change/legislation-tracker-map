@@ -1,0 +1,5 @@
+django-axes
+celery
+redis
+django-celery-beat
+django-celery-results
